@@ -30,7 +30,8 @@ class Musician:
         return "My name is {} and I play {}".format(self.name, self.instrument)
 
     def __repr__(self):
-        return f"{self.__class__.name} instance. Name = {self.name}"
+        return f"{self.__class__.__name__} instance. Name = {self.name}"
+        
         
 
     def get_instrument(self):
@@ -65,6 +66,30 @@ class Drummer(Musician):
         self.instrument = "drums"
         self.solo = "rattle boom crash"
 
+class Band(Musician):
+    instances = []
+    def __init__(self, name, members):
+        self.name = name
+        self.members = members
+        Band.instances.append(self)
+
+    def play_solos(self):
+        solos_list = []
+        for i in self.members:
+            solos_list.append(i.play_solo())
+        return solos_list
+
+    def __str__(self):
+        return f"We are {self.name} and we are music band"
+
+    def __repr__(self):
+        return f"Band instance. Name = {self.name}"
+
+    @classmethod
+    def to_list(cls):
+        return cls.instances         
+
+
 if __name__ == "__main__":
     Joan = Guitarist('Joan Jett')
     Sheila = Drummer('Sheila E.')
@@ -73,3 +98,6 @@ if __name__ == "__main__":
     print(Joan)
     print(Sheila)
     print(Meshell)
+
+
+

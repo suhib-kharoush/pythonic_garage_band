@@ -24,7 +24,7 @@ def test_guitarist_str():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
+# @pytest.mark.skip("todo")
 def test_guitarist_repr():
     joan = Guitarist("Joan Jett")
     actual = repr(joan)
@@ -40,7 +40,7 @@ def test_drummer_str():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
+# @pytest.mark.skip("todo")
 def test_drummer_repr():
     sheila = Drummer("Sheila E.")
     actual = repr(sheila)
@@ -56,7 +56,8 @@ def test_bassist_str():
     assert actual == expected
 
 
-@pytest.mark.skip("todo")
+
+# @pytest.mark.skip("todo")
 def test_bassist_repr():
     meshell = Bassist("Meshell Ndegeocello")
     actual = repr(meshell)
@@ -138,7 +139,7 @@ def test_play_solos_for_whole_band(one_band):
     assert solos[2] == "rattle boom crash"
 
 
-@pytest.mark.skip("todo")
+# @pytest.mark.skip("todo")
 def test_class_tracks_instances():
     assert Band.to_list() == []
     the_nobodies = Band("The Nobodies", [])
@@ -146,7 +147,7 @@ def test_class_tracks_instances():
     assert Band.instances[0] == the_nobodies
 
 
-@pytest.mark.skip("todo")
+# @pytest.mark.skip("todo")
 def test_to_list():
     assert Band.to_list() == []
     the_nobodies = Band("The Nobodies", [])
